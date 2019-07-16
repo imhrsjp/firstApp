@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>Favourite</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+      <ion-item-sliding *ngFor="let quote of quotes">
+        <ion-item (click)="onViewQuote(quote)" color="quoteBackground">
+          <fieldset>
+            <legend><h2> {{ quote.person }} </h2></legend>
+            <p> {{ quote.text }} </p>
+          </fieldset>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="danger" (click)="RemoveFromFavourite(quote)">
+            <ion-icon name="trash"></ion-icon>
+            Delete
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+</ion-content>
+
